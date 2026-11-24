@@ -6,7 +6,7 @@ Painel interativo, em um único arquivo HTML, que organiza os dados disponíveis
 
 ## Como abrir
 
-Não há instalação, build nem dependências. Basta abrir `painel_selic_copom_v8.html` em qualquer navegador moderno.
+Não há instalação, build nem dependências. Basta abrir `painel_selic_copom_v9.html` em qualquer navegador moderno.
 
 - A aba **Atividade** consulta as APIs do IBGE e do BCB quando é aberta, então precisa de internet. Sem conexão, mostra a última cópia salva no navegador, se houver.
 - As fontes (Google Fonts) também são carregadas da internet. Sem elas, o painel usa fontes do sistema.
@@ -21,7 +21,7 @@ Não há instalação, build nem dependências. Basta abrir `painel_selic_copom_
 
 ### Pressões
 - **O que moveu o IPCA de outubro, por grupo**, em impacto no índice (p.p.) ou em variação do grupo (%).
-- **IPCA esperado pelo mercado** (Focus, 16/11) para 2026, 2027 e 2028.
+- **IPCA esperado pelo mercado** (Focus, 13/11) para 2026, 2027 e 2028.
 - **IPCA projetado pelo Copom** (reunião de 4/11, cenário de referência) para 2026, 2027 e 2º tri/2028.
 - **IPCA acumulado no ano** (jan–out/26) contra o mesmo período de 2025.
 
@@ -35,7 +35,7 @@ Gráficos de **desemprego**, **PIB trimestral** e **PIB esperado** (Focus). Nenh
 - **Indicadores frente à referência** e **histórico das decisões do Copom**, de 2019 a 2026, com filtro por cortes, manutenções e altas.
 
 ### Sobre o painel
-Definição das métricas, limitações, conferência dos números, **auditoria ao vivo** contra a API do BCB, bases oficiais para baixar e nota sobre o uso de IA.
+Definição das métricas, limitações, bases para baixar, bases oficiais e nota sobre o uso de IA.
 
 ## Como as métricas são calculadas
 
@@ -65,7 +65,6 @@ A Selic de cada mês é a meta em vigor no último dia do mês. Nas decisões do
 
 - O simulador é aritmético: não modela como a Selic afeta inflação, câmbio ou atividade.
 - O juro real ex-post olha o passado. O ex-ante depende do Focus, que muda toda semana.
-- O histórico de decisões do Copom foi conferido na fonte primária só em parte. Use a auditoria da aba Sobre.
 - Caso único (Brasil, uma decisão): não há comparação com outros bancos centrais.
 - Dados até 17/11/2026.
 
@@ -84,7 +83,8 @@ A Selic de cada mês é a meta em vigor no último dia do mês. Nas decisões do
   - rótulos de data do eixo mais espaçados e rótulo do IPCA sem sobreposição ao do teto;
   - barras de expectativas só com a linha da meta;
   - média do juro real descrita ao lado dos botões, fora do gráfico.
-  
+- **v9:** remoção dos blocos "Conferência dos números principais" e "Auditar com o Banco Central agora" da aba Sobre o painel, junto com o código da auditoria ao vivo. O título da página (aba do navegador) passou a ser "Painel Selic".
+
   Dados e cálculos não mudaram em relação à v7.
 
 ## Uso de IA
