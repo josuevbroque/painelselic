@@ -354,15 +354,15 @@ h2{text-align:left;max-width:none;margin:34px 0 22px}
 <div class="grid g3" id="dsets"></div>
 <div class="grid g2" style="margin-top:18px"><div class="card"><h3>Bases oficiais</h3><ul class="src">
   <li>IPCA mensal: <a href="https://sidra.ibge.gov.br/tabela/1737" target="_blank" rel="noopener noreferrer">IBGE, SIDRA tabela 1737</a> · <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json&amp;dataInicial=01/01/2018&amp;dataFinal=17/11/2026" target="_blank" rel="noopener noreferrer">BCB, série 433 (JSON)</a></li>
-  <li>Selic meta: <a href="https://dadosabertos.bcb.gov.br/dataset/432-taxa-de-juros---meta-selic-definida-pelo-copom" target="_blank" rel="noopener noreferrer">BCB, dados abertos, série 432</a> · <a href="https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&amp;dataInicial=01/01/2019&amp;dataFinal=17/11/2026" target="_blank" rel="noopener noreferrer">JSON</a></li>
+  <li>Selic meta: <a href="https://dadosabertos.bcb.gov.br/dataset/432-taxa-de-juros---meta-selic-definida-pelo-copom" target="_blank" rel="noopener noreferrer">BCB, dados abertos, série 432</a></li>
   <li>Decisões do Copom: <a href="https://www.bcb.gov.br/controleinflacao/historicotaxasjuros" target="_blank" rel="noopener noreferrer">BCB, histórico das taxas de juros</a></li>
   <li>Expectativas de mercado: <a href="https://www.bcb.gov.br/publicacoes/focus" target="_blank" rel="noopener noreferrer">BCB, Relatório Focus</a></li>
   <li>Meta de inflação: <a href="https://www.bcb.gov.br/controleinflacao/historicometas" target="_blank" rel="noopener noreferrer">BCB, histórico das metas</a></li>
-  <li>Desemprego: <a href="https://sidra.ibge.gov.br/tabela/6381" target="_blank" rel="noopener noreferrer">IBGE, SIDRA tabela 6381</a> · <a href="https://www.ibge.gov.br/estatisticas/sociais/trabalho/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?lang=pt-BR" target="_blank" rel="noopener noreferrer">PNAD Contínua trimestral</a></li>
+  <li>Desemprego: <a href="https://sidra.ibge.gov.br/tabela/6381" target="_blank" rel="noopener noreferrer">IBGE, SIDRA tabela 6381</a> · PNAD Contínua mensal, trimestre móvel</li>
   <li>PIB trimestral: <a href="https://sidra.ibge.gov.br/tabela/5932" target="_blank" rel="noopener noreferrer">IBGE, SIDRA tabela 5932</a></li>
  </ul></div>
  <div class="card"><h3>Uso de IA</h3>
- <p class="cmp" style="margin:6px 0 0;font-size:15px">O Claude (Anthropic) localizou e leu as publicações do IBGE e do BCB, transcreveu os valores para o código, montou a estrutura e escreveu o código. Na v7, também adaptou a identidade visual (cores e tipografia do Manual da Marca do Banco Central), as animações e a interatividade, sem alterar nenhum dado ou cálculo, e acrescentou os gráficos de desemprego, PIB e PIB esperado, que leem as APIs oficiais no navegador e não trazem número digitado. Não gerou nem estimou nenhum dado. A verificação final e a responsabilidade pelos números são do autor.</p></div>
+ <p class="cmp" style="margin:6px 0 0;font-size:15px">O Claude (Anthropic) localizou e leu as publicações do IBGE e do BCB, transcreveu os valores para o código, montou a estrutura e escreveu o código, incluindo a identidade visual inspirada no Manual da Marca do Banco Central, as animações, a interatividade e os gráficos de desemprego, PIB e PIB esperado, que leem as APIs oficiais no navegador e não trazem número digitado. Nenhum dado foi gerado ou estimado por IA. A conferência dos números contra as fontes primárias foi feita com assistência do Qwen, em várias rodadas, e o autor revisou os resultados. A responsabilidade final pelos dados é do autor.</p></div>
 </div>
 </section>
 </main>
@@ -567,7 +567,7 @@ const CSV={
  grupos:['grupo,variacao_pct,impacto_pp'].concat(GR.map(g=>[q(g[0]),r2(g[1]),r2(g[2])].join(','))).join('\n'),
  refs:['indicador,valor,unidade,periodo,fonte,url'].concat(REFS.map(r=>r.map(q).join(','))).join('\n')};
 const NOME={serie:'selic_ipca_serie_mensal.csv',decisoes:'copom_decisoes.csv',grupos:'ipca_grupos_out2026.csv',refs:'indicadores_referencia.csv'};
-const DS=[['serie','Série mensal','IPCA mensal e em 12 meses, Selic meta e juro real, de '+MES[0]+'/2018 a out/2026.'],['decisoes','Decisões do Copom','Todas as reuniões desde fev/2019, com IPCA e juro real.'],['grupos','IPCA por grupo (out/26)','Variação e impacto em p.p. dos 9 grupos do IPCA, IBGE (PDF de out/2026).'],['refs','Indicadores de referência','Focus, Copom, núcleos e desemprego, cada um com fonte e link.']];
+const DS=[['serie','Série mensal','IPCA mensal e em 12 meses, Selic meta e juro real, de '+MES[0]+'/2018 a out/2026.'],['decisoes','Decisões do Copom','Todas as reuniões desde fev/2019, com IPCA e juro real.'],['grupos','IPCA por grupo (out/26)','Variação e impacto em p.p. dos 9 grupos do IPCA, IBGE (PDF de out/2026).'],['refs','Indicadores de referência','Focus, Copom e desemprego, cada um com fonte e link.']];
 $('dsets').innerHTML=DS.map(([k,t,d])=>`<div class="card"><h3>${t}</h3><p class="cmp" style="margin:4px 0 12px">${d}</p><a class="btn" data-d="${k}" download="${NOME[k]}">Baixar CSV</a><details><summary>Ver os dados aqui</summary><textarea readonly rows="8" aria-label="${t} em CSV"></textarea></details></div>`).join('');
 document.querySelectorAll('#dsets .card').forEach((c,i)=>{const k=DS[i][0],a=c.querySelector('a');
  c.querySelector('textarea').value=CSV[k];
