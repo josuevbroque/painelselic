@@ -62,16 +62,16 @@ Dados até **17/11/2026**. Fontes acessadas e conferidas em **25/11/2026**.
 
 | Dado | Fonte |
 |---|---|
-| IPCA mensal e grupos | [IBGE, SIDRA 1737](https://sidra.ibge.gov.br/tabela/1737) · [IPCA e INPC de outubro/2026 (PDF)](https://biblioteca.ibge.gov.br/visualizacao/periodicos/236/inpc_ipca_2026_out.pdf) · [BCB, série 433 (JSON)](https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json&dataInicial=01/01/2018&dataFinal=17/11/2026) |
-| Selic meta | [BCB, dados abertos, série 432](https://dadosabertos.bcb.gov.br/dataset/432-taxa-de-juros---meta-selic-definida-pelo-copom) · [JSON](https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=01/01/2019&dataFinal=17/11/2026) |
+| IPCA mensal e grupos | [IBGE, SIDRA 1737](https://sidra.ibge.gov.br/tabela/1737) · [IPCA e INPC de outubro/2026 (PDF)](https://biblioteca.ibge.gov.br/visualizacao/periodicos/236/inpc_ipca_2026_out.pdf) · [release do IPCA de outubro/2026](https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48568-ipca-fica-em-0-14-em-outubro) · [BCB, série 433 (JSON)](https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json&dataInicial=01/01/2018&dataFinal=17/11/2026) |
+| Selic meta | [BCB, dados abertos, série 432](https://dadosabertos.bcb.gov.br/dataset/432-taxa-de-juros---meta-selic-definida-pelo-copom) |
 | Decisões do Copom | [BCB, histórico das taxas de juros](https://www.bcb.gov.br/controleinflacao/historicotaxasjuros) |
 | Projeções e votação | [BCB, ata da 282ª reunião (PDF)](https://www.bcb.gov.br/content/copom/atascopom/Copom282-not20261104282.pdf) |
 | Expectativas de mercado | [BCB, Focus de 13/11/2026 (PDF)](https://www.bcb.gov.br/content/focus/focus/R20261113.pdf) · [Relatório Focus](https://www.bcb.gov.br/publicacoes/focus) |
-| Metas de inflação | [BCB, histórico das metas](https://www.bcb.gov.br/controleinflacao/historicometas) |
-| Desemprego | [IBGE, SIDRA 6381](https://sidra.ibge.gov.br/tabela/6381) · [release de 30/10/2026](https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48409-30-10-release) · [PNAD Contínua trimestral](https://www.ibge.gov.br/estatisticas/sociais/trabalho/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html?lang=pt-BR) |
-| PIB trimestral | [IBGE, SIDRA 5932](https://sidra.ibge.gov.br/tabela/5932) · [release de 01/09/2026](https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/47902-pib-cresce-0-5-no-segundo-trimestre-de-2026) |
+| Metas de inflação | [BCB, histórico das metas](https://www.bcb.gov.br/controleinflacao/historicometas) · [BCB, trajetória histórica das metas (página em inglês, usada em `indicadores_referencia.csv`)](https://www.bcb.gov.br/en/monetarypolicy/historicalpath) |
+| Desemprego | [IBGE, SIDRA 6381](https://sidra.ibge.gov.br/tabela/6381) · [release de 30/10/2026](https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48409-30-10-release) · PNAD Contínua mensal, trimestre móvel |
+| PIB trimestral | [IBGE, SIDRA 5932](https://sidra.ibge.gov.br/tabela/5932) |
 
-Conferência: os 106 valores mensais do IPCA foram comparados um a um com a série 433; as 63 decisões do Copom (datas e metas) com a série 432 e com a tabela de histórico de taxas de juros do BCB; Focus, grupos do IPCA, desemprego e PIB com os PDFs e releases acima.
+Conferência: os 106 valores mensais do IPCA foram comparados um a um com a série 433; as 63 decisões do Copom (datas e metas) com a série 432 e com a tabela de histórico de taxas de juros do BCB; Focus, grupos do IPCA, desemprego e PIB com os PDFs, releases e tabelas acima.
 
 ## Limitações
 
